@@ -1,12 +1,15 @@
 const fs = require('fs');
 const path = require('path');
-const shapes = require('./shapes');
-const { default: inquirer } = require('inquirer');
+const shapes = require('./Lib/shapes');
+const inquirer = require('inquirer');
+const { Circle, Square, Triangle } = require('./Lib/shapes');
+
+
 
 //Create an an array of questions for user input in node terminal
 const questions = [
     {
-        type: 'choice',
+        type: 'list',
         name: 'shape',
         message: 'What shape would you like to create?',
         choices: ['triangle', 'circle','square'],
@@ -20,13 +23,48 @@ const questions = [
         type: 'input',
         name: 'letters',
         message: 'What letters would you like to include in your logo? You can include up to 3 letters.'
-        validate: (input) => input.length <= 3,
+        // validate: (input) => input.length <= 3,
+    },
+    {
+        type: 'input',
+        name: 'background',
+        message: 'What color would you like the background to be?'
     },
 ];
-            // create switch statement to determine which shape to create
 
-// TODO: Create a function to initialize app
-function init() {}
-inquirer.prompt(questions).then((answers) => {
+// write a functions that will ask the user the array of questions and then write the answers to a file
+
+function promptUser() {
+    return inquirer.prompt(questions);
+}
+
+// q: write a function that will take the user's answers and write them to a file
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
+promptUser().then((answers) => {
     console.log(answers);
-    fs.writeTo
+    let shape;
+    if (answers.shape === 'triangle') {
+        shape = new Triangle();
+    } else if (answers.shape === 'circle') {
+        shape = new Circle();
+    } else {
+        shape = new Square();
+    }
+    shape.setColor(answers.Text);
+    console.log(shape);
+    shape.setBackground(answers.background);
+    shape.setText(answers.letters);
+let fileText = shape.render();
+
+console.log(fileText);
+    // if (answers.shape === 'triangle') {
+    //     shape = new Triangle();
+    // } else if (answers.shape === 'circle') {
+    //     shape = new Circle fileText=();
+    // } else {
+    //     shape = new Square();
+    // }
+});
+// use file system to write the file in html
