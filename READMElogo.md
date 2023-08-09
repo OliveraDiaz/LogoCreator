@@ -33,7 +33,7 @@ You can reach me with questions at Djanetod@hotmail.com.
 GitHub: OliveraDiaz
 
 ## Links
-Git: https://github.com/OliveraDiaz/LogoCreator.git Video walkthrough:
+Git: https://github.com/OliveraDiaz/LogoCreator.git Video walkthrough: https://watch.screencastify.com/v/jlvUlzsVvktWHZ16W18r
 
 ## Screenshot
 ![Sample](image.png)
