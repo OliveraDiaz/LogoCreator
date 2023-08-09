@@ -59,13 +59,8 @@ promptUser().then((answers) => {
 let fileText = shape.render()
 writeToFile('index.html', fileText);
 
-console.log(fileText);
-    // if (answers.shape === 'triangle') {
-    //     shape = new Triangle();
-    // } else if (answers.shape === 'circle') {
-    //     shape = new Circle fileText=();
-    // } else {
-    //     shape = new Square();
-    // }
+// console.log(fileText);
+console.log('Success! Your logo has been created!');
 });
-// use file system to write the file in html
+
+
