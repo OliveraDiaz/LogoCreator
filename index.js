@@ -56,7 +56,8 @@ promptUser().then((answers) => {
     console.log(shape);
     shape.setBackground(answers.background);
     shape.setText(answers.letters);
-let fileText = shape.render();
+let fileText = shape.render()
+writeToFile('index.html', fileText);
 
 console.log(fileText);
     // if (answers.shape === 'triangle') {
