@@ -57,10 +57,10 @@ promptUser().then((answers) => {
     shape.setBackground(answers.background);
     shape.setText(answers.letters);
 let fileText = shape.render()
-writeToFile('index.html', fileText);
+writeToFile('Logo.svg', fileText);
 
 // console.log(fileText);
-console.log('Success! Your logo has been created!');
+console.log('Generated logo.svg');
 });
 
 
